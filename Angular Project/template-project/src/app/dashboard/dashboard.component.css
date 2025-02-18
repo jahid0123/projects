@@ -1,0 +1,94 @@
+.nav{background-color: #f9f9f9 ; border-bottom: 1px solid rgb(189, 185, 185); 
+    box-shadow: 0px 0px 9px 0px rgba(206, 204, 204, 0.5)}
+
+    .header-text{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 57px;
+        padding: 0 20px;
+        align-items: center;
+}    
+.header-text h2{
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+.sidebar {
+    height: 100vh;
+    padding: 10px;
+  }
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table {
+    background: white;
+  }
+
+  .login a{
+    text-decoration: none;
+    color: #2b3088;
+    /* padding: 0 33px; */
+    margin: 0 17px;
+}
+  
+.main_manu{display: flex;}
+.left_side{
+    width: 210px;
+    height: 100vh;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: #f9f9f9;
+    margin-right: 10px;
+    }
+.icon_le{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    background: #f9f9f9;
+    width: 100%;
+}  
+.icon_le:hover{
+    background-color: #faeaea;
+    
+}  
+.icon_le .icon-one{
+    text-decoration: none;  
+}
+.icon_le .icon-one .visi{
+    margin: 0 0.5px;
+}
+
+/* *********right side********** */
+
+.right_side{
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+.main_card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.card h1{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+.card-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+/* order */
+
+.order{
+    margin-top: 25px;
+    display: flex
+; 
+}

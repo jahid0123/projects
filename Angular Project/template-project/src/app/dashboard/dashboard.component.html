@@ -1,0 +1,136 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="">
+            <div class="nav">
+                <div class="header-text">
+                    <h2>Posters Galore Backend</h2>
+                    <div class="login">
+                        <a href="#"><i class="bi bi-github"></i> Source</a>
+                        <a href="#"><i class="bi bi-person"></i> Username</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="main_manu">
+            <div class="left_side col-md-3">
+                <div class="icon_le">
+                    <a class="icon-one" href="#"><i class="visi bi bi-people"></i> Visitors </a>
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+                <div class="icon_le">
+                    <a class="icon-one" href="#"><i class="bi bi-cart-dash-fill"></i> Sales </a>
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+                <div class="icon_le">
+                    <a class="icon-one" href="#"><i class="bi bi-list-ul"></i> Catalog </a>
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+                <div class="icon_le">
+                    <a class="icon-one" href="#"><i class="bi bi-chat-dots-fill"></i> Reviews </a>
+                </div>
+                <div class="icon_le">
+                    <a class="icon-one" href="#"><i class="bi bi-gear-fill"></i> Configaration </a>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="alert alert-info mt-3">
+                    Welcome to the ng-admin demo! Feel free to explore and modify the data - it’s local to your
+                    computer.
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <div class="card bg-primary text-white p-3">
+                            <div>
+                                <i class="bi bi-currency-dollar" style="float: left; font-size: 80px;"></i>
+                                <h2 style="text-align: right;">0</h2>
+                                <p style="text-align: right;">Monthly revenue</p>
+                            </div>
+
+                            <button class="btn btn-light btn-sm">View Details</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-success text-white p-3">
+                            <div >
+                                <i class="bi bi-cart-fill" style="float: left; font-size: 80px;"></i>
+                                <h2 style="text-align: right;">0</h2>
+                                <p style="text-align: right;">Pending orders</p>
+                            </div>
+                            <button class="btn btn-light btn-sm">View Details</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-warning text-white p-3">
+                            <div>
+                                <i class="bi bi-chat-dots" style="float: left; font-size: 80px;"></i>
+                                <h2 style="text-align: right;">0</h2>
+                                <p style="text-align: right;">Pending reviews</p>
+                            </div>
+                            <button class="btn btn-light btn-sm">View Details</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-danger text-white p-3">
+                            <div>
+                                <i class="bi bi-person-add" style="float: left; font-size: 80px;"></i>
+                                <h2 style="text-align: right;">0</h2>
+                                <p style="text-align: right;">New customers</p>
+                            </div>
+                            <button class="btn btn-light btn-sm">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5>Pending Orders</h5>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Reference</th>
+                                    <th>Customer</th>
+                                    <th>Nb Items</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let order of orders">
+                                    <td>{{ order.date }}</td>
+                                    <td>{{ order.reference }}</td>
+                                    <td>{{ order.customer }}</td>
+                                    <td>{{ order.nbItems }}</td>
+                                    <td>${{ order.total }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h5>Latest Reviews</h5>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Product</th>
+                                    <th>Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let review of reviews">
+                                    <td>{{ review.customer }}</td>
+                                    <td>{{ review.product }}</td>
+                                    <td>
+                                        <span *ngFor="let star of getStars(review.rating)">★</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
