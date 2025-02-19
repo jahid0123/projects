@@ -3,19 +3,19 @@
       <form (ngSubmit) = "onSubmit()">
         <div class="mb-3">
           <label for="name" class="form-label" >Full Name</label>
-          <input type="text" class="form-control" name="name" id="name" [(ngModel)]="user.name" />
+          <input type="text" class="form-control" name="name" id="name" [(ngModel)]="u.name" />
         </div>
         <div class="mb-3">
           <label for="age" class="form-label">Age</label>
-          <input type="number" class="form-control" id="age" name="age" [(ngModel)]="user.age"/>
+          <input type="number" class="form-control" id="age" name="age" [(ngModel)]="u.age"/>
         </div>
         <div class="mb-3">
           <label for="phone" class="form-label">Phone</label>
-          <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="user.phone"/>
+          <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="u.phone"/>
         </div>
         <div class="mb-3">
           <label for="address" class="form-label">Address</label><br />
-          <textarea class="form-control" name="address" id="address" style="height: 100px" [(ngModel)]="user.address"></textarea>
+          <textarea class="form-control" name="address" id="address" style="height: 100px" [(ngModel)]="u.address"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

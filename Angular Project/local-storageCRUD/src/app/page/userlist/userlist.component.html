@@ -1,0 +1,32 @@
+
+  <div class="container mt-4">
+    
+    @if(user.length>0){
+    <table class="table table-secondary table-bordered table-striped-columns" style="color: black; text-align: center;"
+    >
+      <thead style="color: black;">
+        <th class="p-2">ID</th>
+        <th class="p-2">Name</th>
+        <th class="p-2">Age</th>
+        <th class="p-2">Phone</th>
+        <th class="p-2">Address</th>
+      </thead>
+      <tbody>
+        @for(value of user; track value){
+        <tr>
+          <td>{{ user.indexOf(value) + 1 }}</td>
+          <td>{{ value.name }}</td>
+          <td>{{ value.age }}</td>
+          <td>{{ value.phone }}</td>
+          <td>{{ value.address }}</td>
+          <td>
+            <button class="btn btn-warning" (click)="editUser(value)">Edit</button>
+            <button class="btn btn-danger" (click)="deleteUser(value)">Delete</button>
+            </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+    }@else { }
+  </div>
+
