@@ -1,0 +1,51 @@
+<h1 class="mt-4 mb-4 justify-content-center d-flex">Listing The Information Details Of All Products</h1>
+<div class="container">
+    <div class="card p-4">
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="snumber" class="form-label">Serial Number:</label>
+      <input type="number" class="form-control" placeholder="Enter snumber" name="snumber" id="snumber" [(ngModel)]="p.sNumber"/>
+    </div>
+    <br>
+    <div>
+      <label for="pname" class="form-label">Products name:</label>
+      <input type="text" class="form-control" placeholder="Enter Products Name" name="pname" id="pname" [(ngModel)]="p.name"/>
+    </div>
+    <br/>
+    <div>
+      <label for="price" class="form-label">Price:</label>
+      <input type="number" class="form-control" placeholder="Enter products price" name="price" id="price" [(ngModel)]="p.price"/>
+    </div>
+    <br/>
+    <div>
+      <label for="quantity" class="form-label">Quantity:</label>
+      <input type="number" class="form-control" placeholder="Enter quantity" name="quantity" id="quantity" [(ngModel)]="p.quantity"/>
+    </div>
+    <br>
+    <div>
+      <label for="purchasedate" class="form-label">Purchase Date:</label>
+      <input type="Date" class="form-control" placeholder="Enter purchasedate" name="purchasedate" id="purchasedate" [(ngModel)]="p.purchaseDate">
+    </div>
+    <br>
+    <div>
+      <label for="selldate" class="form-label">Sell Date :</label>
+      <input type="Date" class="form-control" placeholder="Enter selldate" name="selldate" id="selldate" [(ngModel)]="p.sellDate">
+    </div>
+    <br>    
+    <div>
+      <label for="seller" class="form-label">Seller: </label>
+      <input type="text" class="form-control" placeholder="Enter seller" name="seller" id="seller" [(ngModel)]="p.seller">
+    </div>
+    <br>
+    <div>
+      <label for="buyer" class="form-label">Buyer: </label>
+      <input type="text" class="form-control" name="buyer" id="buyer" [(ngModel)]="p.buyer"/>
+    </div>
+    <br>
+    <div>
+      <button type="submit" class="btn btn-success">{{ isUpdate ? 'Update' : 'Submit' }}</button>
+    </div>
+</form>
+</div>
+</div>
+

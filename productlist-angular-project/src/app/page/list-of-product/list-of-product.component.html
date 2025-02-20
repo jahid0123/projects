@@ -1,0 +1,50 @@
+<div class="container">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Purchase Date</th>
+        <th>Sell Date</th>
+        <th>Seller</th>
+        <th>Buyer</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+    
+        @for (value of product; track value) {
+          <tr>
+            <td>{{ product.indexOf(value) + 1 }}</td>
+            <td>{{ value.name }}</td>
+            <td style="color: rgb(110, 79, 184);">{{ value.price }}</td>
+            <td>{{ value.quantity }}</td>
+            <td style="color: rgb(54, 71, 102);">{{ value.purchaseDate }}</td>
+            <td>{{ value.sellDate }}</td>
+            <td style="color: rgb(110, 79, 184);">{{ value.seller }}</td>
+            <td>{{ value.buyer }}</td>
+    
+            <td>
+              <button class="btn btn-primary btn-outline-warning "
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      (click)="editUser(value)">Update
+              </button>
+              <br>
+    
+              <button class="btn btn-outline-danger btn-secondary "
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      (click)="deleteUser(value)">Delete
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    
+    </table>
+    </div>
+    
+    
+    
+    
