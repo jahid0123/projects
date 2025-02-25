@@ -1,4 +1,4 @@
-package studentJSF;
+package productJSF;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,27 +8,27 @@ import jakarta.inject.Named;
 
 @Named
 @SessionScoped // Change to SessionScoped to maintain student state across requests
-public class StudentBean implements Serializable {
+public class ProductBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Student student = new Student();
-	private StudentDAO studentDAO = new StudentDAO();
-	private List<Student> studentList;
+	private Product product = new Product();
+	private ProductDAO productDAO = new ProductDAO();
+	private List<Product> productList;
 	private boolean editMode = false;
 
-	public String saveStudent() {
+	public String saveProduct() {
 		try {
 			if (editMode) {
 				// Update existing student record in database
-				studentDAO.updateStudent(student);
+				productDAO.updateProduct(product);
 			} else {
 				// Create new student record
-				studentDAO.createStudent(student);
+				productDAO.createProduct(product);
 			}
 
 			refreshList(); // Refresh student list after saving
 			clearForm(); // Clear form after saving
-			return "student?faces-redirect=true"; // Redirect to student page
+			return "index?faces-redirect=true"; // Redirect to student page
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -36,14 +36,14 @@ public class StudentBean implements Serializable {
 		}
 	}
 
-	public void editStudent(Student student) {
-		this.student = student; // Assign the selected student to the form
+	public void editProduct(Product product) {
+		this.product = product; // Assign the selected student to the form
 		editMode = true; // Set edit mode to true
 	}
 
-	public void deleteStudent(int id) {
+	public void deleteProduct(int id) {
 		try {
-			studentDAO.deleteStudent(id);
+			productDAO.deleteProduct(id);
 			refreshList(); // Refresh student list after deletion
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -51,31 +51,31 @@ public class StudentBean implements Serializable {
 	}
 
 	public void clearForm() {
-		student = new Student(); // Clear form fields
+		product = new Product(); // Clear form fields
 		editMode = false; // Reset edit mode
 	}
 
 	private void refreshList() {
 		try {
-			studentList = studentDAO.allStudent(); // Refresh student list from the database
+			productList = productDAO.allProducts(); // Refresh student list from the database
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	// Getters and Setters
-	public Student getStudent() {
-		return student;
+	public Product getProduct() {
+		return product;
 	}
 
-	public void setStudent(Student student) {
-		this.student = student;
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
-	public List<Student> getStudentList() {
-		if (studentList == null) {
+	public List<Product> getProductList() {
+		if (productList == null) {
 			refreshList();
 		}
-		return studentList;
+		return productList;
 	}
 }
