@@ -1,0 +1,16 @@
+/* Add some padding and round corners to the card */
+.card {
+    border-radius: 8px;
+  }
+  
+  /* Add a hover effect to the button */
+  .btn-primary:hover {
+    background-color: #0056b3; /* Slightly darker blue */
+    border-color: #0056b3;
+  }
+  
+  /* Optional: Add more space around the form */
+  .container {
+    max-width: 800px; /* Limit the form width */
+  }
+  

@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <!-- Heading with Background -->
+  <h3 class="text-center mb-4 py-3 bg-success text-white rounded shadow-sm">Add Car</h3>
+
+  <!-- Add Car Form -->
+  <form (ngSubmit)="addCar()" class="shadow p-4 rounded border border-light">
+    <!-- Car Brand Input -->
+    <div class="mb-3">
+      <label for="brand" class="form-label">Brand:</label>
+      <input class="form-control" [(ngModel)]="car.brand" name="brand" id="brand" required placeholder="Enter car brand">
+    </div>
+
+    <!-- Car Model Input -->
+    <div class="mb-3">
+      <label for="model" class="form-label">Model:</label>
+      <input class="form-control" [(ngModel)]="car.model" name="model" id="model" required placeholder="Enter car model">
+    </div>
+
+    <!-- Rent Price Input -->
+    <div class="mb-3">
+      <label for="rentPrice" class="form-label">Rent Price (per day):</label>
+      <input class="form-control" [(ngModel)]="car.rentPricePerDay" name="rentPrice" id="rentPrice" type="number" required placeholder="Enter rent price per day">
+    </div>
+
+    <!-- Submit Button -->
+    <div class="d-grid gap-2">
+      <button class="btn btn-success btn-lg" type="submit">Add Car</button>
+    </div>
+  </form>
+</div>

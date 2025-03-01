@@ -21,4 +21,12 @@ export class TeacherService {
   addTeacher(newTeacher: Teacher): Observable<Teacher> {
     return this.http.post<Teacher>(this.teacherUrl, newTeacher);
   }
+
+  updateTeacher(teacher: Teacher): Observable<Teacher> {
+    return this.http.put<Teacher>('${this.apiUrl}' +'/'+ '${teacher.id}', teacher);
+  }
+
+  deleteTeacher(id: number): Observable<any> {
+    return this.http.delete<void>(`${this.teacherUrl}/${id}`);
+  }
 }
