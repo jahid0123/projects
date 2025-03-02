@@ -5,19 +5,29 @@ export class Car {
   model: string;
   rentPricePerDay: number;
   isAvailable: boolean; // Add availability flag
-  isRented: boolean; // Add isRented flag to track the rental status
 
   constructor(
-    id: number = 0,
-    brand: string = '',
-    model: string = '',
-    rentPricePerDay: number = 0
+    id: number,
+    brand: string,
+    model: string,
+    rentPricePerDay: number,
   ) {
     this.id = id;
     this.brand = brand;
     this.model = model;
     this.rentPricePerDay = rentPricePerDay;
     this.isAvailable = true;  // Default value to available when a car is added
-    this.isRented = false;    // Default value, a new car is not rented
+  }
+
+  totalPrice (days: number){
+
+    return this.rentPricePerDay * days;
+
+  }
+
+
+  isAvailable(){
+    return
+
   }
 }
