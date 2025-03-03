@@ -71,12 +71,12 @@
                             <label class="form-label fw-bold">Available:</label><br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" [(ngModel)]="car.isAvailable"
-                                    name="isAvailable" value="true" />
+                                    name="isAvailable" [value]="true" />
                                 <label class="form-check-label">Yes</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" [(ngModel)]="car.isAvailable"
-                                    name="isAvailable" value="false" />
+                                    name="isAvailable" [value]="false" />
                                 <label class="form-check-label">No</label>
                             </div>
                         </div>
