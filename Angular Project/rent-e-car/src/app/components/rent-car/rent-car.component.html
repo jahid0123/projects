@@ -1,0 +1,15 @@
+<h2>Rent a Car</h2>
+<label>Customer Name:</label>
+<input [(ngModel)]="customerName" placeholder="Enter Name" />
+
+<label>Select Car:</label>
+<select [(ngModel)]="carID">
+  <option *ngFor="let car of availableCars" [value]="car.carID">
+    {{ car.carBrand }} - {{ car.carModel }}
+  </option>
+</select>
+
+<label>Rental Days:</label>
+<input type="number" [(ngModel)]="rentalDays" min="1" />
+
+<button (click)="rentCar()">Rent Car</button>
