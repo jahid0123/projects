@@ -1,15 +1,15 @@
-<form #carForm="ngForm" (ngSubmit)="onSubmit(carForm)">
+<form (ngSubmit)="onSubmit()">
     <label>Car Brand:</label>
-    <input type="text" [(ngModel)]="carBrand" name="carBrand" required />
+    <input type="text" [(ngModel)]="car.carBrand" name="carBrand" required />
     
     <label>Car Model:</label>
-    <input type="text" [(ngModel)]="carModel" name="carModel" required />
+    <input type="text" [(ngModel)]="car.carModel" name="carModel" required />
     
     <label>Base Price per Day:</label>
-    <input type="number" [(ngModel)]="carBasePrice" name="carBasePrice" required />
+    <input type="number" [(ngModel)]="car.carBasePrice" name="carBasePrice" required />
     
     <label>Available:</label>
-    <input type="checkbox" [(ngModel)]="isAvailable" name="isAvailable" />
+    <input type="checkbox" [(ngModel)]="car.isAvailable" name="isAvailable" />
     
-    <button type="submit" [disabled]="!carForm.valid">Submit</button>
+    <button type="submit">Submit</button>
   </form>
