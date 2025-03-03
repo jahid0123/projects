@@ -8,22 +8,5 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-
-
-}
-
-
-export class Car{
-
-  carBrand: string;
-  carModel: string;
-  carBasePrice: number;
-  isAvailable: boolean;
-
-  constructor(carBrand: string, carModel: string, carBasePrice: number, isAvailable: boolean){
-    this.carBrand = carBrand;
-    this.carModel = carModel;
-    this.carBasePrice = carBasePrice;
-    this.isAvailable = isAvailable;
-  }
+  title = 'car-rental-system';
 }
