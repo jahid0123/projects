@@ -1,1 +1,15 @@
-<p>car-list works!</p>
+<form #carForm="ngForm" (ngSubmit)="onSubmit(carForm)">
+    <label>Car Brand:</label>
+    <input type="text" [(ngModel)]="carBrand" name="carBrand" required />
+    
+    <label>Car Model:</label>
+    <input type="text" [(ngModel)]="carModel" name="carModel" required />
+    
+    <label>Base Price per Day:</label>
+    <input type="number" [(ngModel)]="carBasePrice" name="carBasePrice" required />
+    
+    <label>Available:</label>
+    <input type="checkbox" [(ngModel)]="isAvailable" name="isAvailable" />
+    
+    <button type="submit" [disabled]="!carForm.valid">Submit</button>
+  </form>

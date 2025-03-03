@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { Car } from '../../app.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-car-list',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './car-list.component.html',
   styleUrl: './car-list.component.css'
 })
