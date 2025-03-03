@@ -14,11 +14,8 @@ export class CarListComponent {
 
   onSubmit(): void{
     let cars: Car[] = [];
-    
     cars.push(this.car);
-
     localStorage.setItem('car', JSON.stringify(cars));
-
     this.car = new Car('', '', 0, false);
   }
 
