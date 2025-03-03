@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { TeacherService } from '../../services/teacher.service';
 import { FormsModule } from '@angular/forms';
 import * as bootstrap from 'bootstrap';
-import { CommonModule } from '@angular/common';
+
+import { TeacherService } from '../../services/teacherService/teacher.service';
 
 @Component({
   selector: 'app-teachers',
@@ -87,7 +87,7 @@ export class TeachersComponent implements OnInit {
       () => {
         this.teachers = this.teachers.filter((t) => t.id !== id);
       },
-      (error) => {
+      (error: any) => {
         console.error('Error deleting teacher: ', error);
       },
     );
