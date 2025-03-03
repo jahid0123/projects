@@ -1,0 +1,92 @@
+<!-- car list -->
+<div class="container">
+    <h1 class="text-center mt-4 text-bold">CARS INFORMATION</h1>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary mb-1" (click)="openModal()">
+        Add Car
+    </button>
+
+    <table class="table text-center table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>BRAND</th>
+                <th>MODEL</th>
+                <th>BASE PRICE</th>
+                <th>AVAILABILITY</th>
+                <th>ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let car of cars; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{car.carBrand}}</td>
+                <td>{{car.carModel}}</td>
+                <td>{{car.carBasePrice}}</td>
+                <td>{{car.isAvailable ? "Yes" : "No"}}</td>
+                <td>
+                    <!-- Update button -->
+                    <button class="btn btn-primary btn-outline-warning" (click)="editCar(car, i)">
+                        Update
+                    </button>
+
+                    <button class="btn btn-outline-danger btn-secondary" (click)="deleteCar(i)">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal for adding/updating car -->
+<div *ngIf="modalOpen" class="modal fade show" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="display: block;">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content w-100">
+            <div class="card shadow-lg rounded-4 w-100">
+                <div class="card-header text-white text-center py-2 d-flex justify-content-between"
+                    style="background: linear-gradient(135deg, #5a8d66, hsla(192, 85%, 33%, 0.824));">
+                    <h3 class="m-0">Car Rental Form</h3>
+                    <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Car Brand:</label>
+                            <input class="form-control border-success" type="text" [(ngModel)]="car.carBrand"
+                                name="carBrand" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Car Model:</label>
+                            <input class="form-control border-success" type="text" [(ngModel)]="car.carModel"
+                                name="carModel" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Base Price per Day:</label>
+                            <input class="form-control border-success" type="number" [(ngModel)]="car.carBasePrice"
+                                name="carBasePrice" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Available:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" [(ngModel)]="car.isAvailable"
+                                    name="isAvailable" value="true" />
+                                <label class="form-check-label">Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" [(ngModel)]="car.isAvailable"
+                                    name="isAvailable" value="false" />
+                                <label class="form-check-label">No</label>
+                            </div>
+                        </div>
+                        <div class="text-center d-flex justify-content-between">
+                            <button type="submit" class="btn btn-success w-50 shadow-sm">Submit</button>
+                            <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

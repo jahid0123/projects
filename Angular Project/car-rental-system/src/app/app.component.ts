@@ -10,3 +10,20 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'car-rental-system';
 }
+
+
+export class Car{
+
+  carBrand: string;
+  carModel: string;
+  carBasePrice: number;
+  isAvailable: boolean;
+
+  constructor(carBrand: string, carModel: string, carBasePrice: number, isAvailable: boolean){
+    this.carBrand = carBrand;
+    this.carModel = carModel;
+    this.carBasePrice = carBasePrice;
+    this.isAvailable = isAvailable;
+  }
+}
+
