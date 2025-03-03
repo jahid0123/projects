@@ -8,6 +8,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+<<<<<<< HEAD
 
 
 }
@@ -25,4 +26,7 @@ export class Car{
     this.carBasePrice = carBasePrice;
     this.isAvailable = isAvailable;
   }
+=======
+  title = 'car-rental-system';
+>>>>>>> 96cda9e967ce3d4d39ede2a9678c34bc70563b9c
 }

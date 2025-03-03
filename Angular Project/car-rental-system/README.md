@@ -1,6 +1,10 @@
 # CarRentalSystem
 
+<<<<<<< HEAD
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.6.
+=======
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+>>>>>>> 96cda9e967ce3d4d39ede2a9678c34bc70563b9c
 
 ## Development server
 
