@@ -23,7 +23,8 @@ export class Car{
     this.carBrand = carBrand;
     this.carModel = carModel;
     this.carBasePrice = carBasePrice;
-    this.isAvailable = isAvailable;
+    this.isAvailable = isAvailable
+    ;
   }
 }
 
