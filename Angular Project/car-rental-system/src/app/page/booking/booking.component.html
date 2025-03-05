@@ -1,18 +1,27 @@
-<table>
-    <thead>
-        <th>id</th>
-        <th>Brand</th>
-        <th>Model</th>
-        <th>Base Price</th>
-        <th>Availablity</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let car of availableCars;">
-            <td>{{car.carId}}</td>
-            <td>{{car.carBrand}}</td>
-            <td>{{car.carModel}}</td>
-            <td>{{car.carBasePrice}}</td>
-            <td>{{car.isAvailable}}</td>
-        </tr>
-    </tbody>
-</table>
+<!-- 
+  <div>
+    <label for="car">Select Car:</label>
+    <select id="car"  name="car" required>
+      <option *ngFor="let car of availableCars">
+        {{ car.carBrand }} {{ car.carModel }} - ${{ car.carBasePrice }} per day
+      </option>
+    </select>
+  </div> -->
+
+  <form (ngSubmit)="bookCar()">
+    <div>
+      <label for="car">Select Car:</label>
+      <select id="car" [(ngModel)]="selectedCar" name="car" required>
+        <option *ngFor="let car of availableCars" [ngValue]="car">
+          {{ car.carBrand }} {{ car.carModel }} - ${{ car.carBasePrice }} per day
+        </option>
+      </select>
+    </div>
+  
+    <div *ngIf="selectedCar">
+      <p>Total Amount: ${{ totalAmount }}</p>
+    </div>
+  
+    <button type="submit">Book Car</button>
+  </form>
+  

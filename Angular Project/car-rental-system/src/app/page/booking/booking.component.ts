@@ -1,81 +1,67 @@
-import { NgFor } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
-import { Car } from '../../app.component';
+import { OnInit } from "@angular/core";
+import { Book, Car } from "../../app.component";
 
-declare var bootstrap: any; // Bootstrap modal handling
-
-@Component({
-  selector: 'app-booking',
-  imports: [FormsModule, NgFor],
-  templateUrl: './booking.component.html',
-  styleUrl: './booking.component.css'
-})
-export class BookingComponent implements OnInit {
- 
+export class BookComponent implements OnInit {
   availableCars: Car[] = [];
+  selectedCar: Car | null = null;  // Will hold the selected car object
+  customerName = '';
+  customerIdentity = 0;
+  customerContact = 0;
+  days = 1;
+  totalAmount = 0;
+  bookingConfirmed = false;
 
-  rentalForm: FormGroup;
-  totalPrice = 0;
-  selectedCarDetails: any;
-
-  constructor(private fb: FormBuilder) {
-    this.rentalForm = this.fb.group({
-      customerName: ['', Validators.required],
-      customerID: ['', Validators.required],
-      customerContact: ['', Validators.required],
-      days: [1, [Validators.required, Validators.min(1)]],
-      selectedCar: ['', Validators.required]
-    });
-  }
-
-  ngOnInit() {
+  ngOnInit(): void {
     let allCar = JSON.parse(localStorage.getItem('car') || '[]');
-    // this.availableCars = allCar;
-    // this.availableCars = this.availableCars.filter(car => car.isAvailable === true);
-    this.availableCars = allCar.filter((car: { isAvailable: string | boolean; }) => car.isAvailable == "true" || car.isAvailable === true);
-
-
+    // Filter cars where isAvailable is true (boolean or string comparison)
+    this.availableCars = allCar.filter((car: { isAvailable: string | boolean; }) => car.isAvailable === true || car.isAvailable === 'true');
   }
 
-  calculateTotalPrice() {
-    const days = this.rentalForm.value.days || 0;
-    const selectedCarID = this.rentalForm.value.selectedCar;
+  onCarSelect(car: Car): void {
+    this.selectedCar = car;
+    this.calculateTotalAmount();
+  }
 
-    this.selectedCarDetails = this.availableCars.find(car => car.carId === selectedCarID);
-    if (this.selectedCarDetails) {
-      this.totalPrice = this.selectedCarDetails.basePricePerDay * days;
-    } else {
-      this.totalPrice = 0;
+  calculateTotalAmount(): void {
+    if (this.selectedCar) {
+      this.totalAmount = this.selectedCar.carBasePrice * this.days;
     }
   }
 
-  confirmRental() {
-    if (this.rentalForm.valid) {
-      this.calculateTotalPrice();
-      let modal = new bootstrap.Modal(document.getElementById('confirmModal'));
-      modal.show();
+  bookCar(): void {
+    if (!this.selectedCar || !this.customerName || !this.customerIdentity || !this.customerContact || !this.days) {
+      alert('Please fill out all fields and select a car');
+      return;
     }
-  }
 
-  submitRental() {
-    const rentalData = {
-      customer: this.rentalForm.value.customerName,
-      customerID: this.rentalForm.value.customerID,
-      customerContact: this.rentalForm.value.customerContact,
-      days: this.rentalForm.value.days,
-      car: this.selectedCarDetails,
-      totalPrice: this.totalPrice
-    };
+    // Create the booking object
+    const newBooking = new Book(
+      this.selectedCar,
+      this.customerName,
+      this.customerIdentity,
+      this.customerContact,
+      this.days
+    );
 
-    // Save rental data to Local Storage
-    let rentals = JSON.parse(localStorage.getItem('rentals') || '[]');
-    rentals.push(rentalData);
-    localStorage.setItem('rentals', JSON.stringify(rentals));
+    // Confirm the booking
+    const confirmBooking = confirm(`Confirm booking?\nTotal Amount: $${this.totalAmount}`);
 
-    alert('Rental confirmed successfully!');
-    this.rentalForm.reset();
-    this.totalPrice = 0;
+    if (confirmBooking) {
+      // Update car availability
+      this.selectedCar.isAvailable = false;
+
+      // Save the updated car list in localStorage
+      localStorage.setItem('cars', JSON.stringify(this.availableCars));
+
+      // Retrieve previous bookings or initialize empty array
+      const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+      bookings.push(newBooking);
+
+      // Save the new booking in localStorage
+      localStorage.setItem('bookings', JSON.stringify(bookings));
+
+      alert('Booking confirmed!');
+      this.bookingConfirmed = true;
+    }
   }
 }
-
