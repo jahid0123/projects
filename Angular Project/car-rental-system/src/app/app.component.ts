@@ -14,17 +14,35 @@ export class AppComponent {
 
 export class Car{
 
+  carId: number;
   carBrand: string;
   carModel: string;
   carBasePrice: number;
   isAvailable: boolean;
 
-  constructor(carBrand: string, carModel: string, carBasePrice: number, isAvailable: boolean){
+  constructor(carId: number,carBrand: string, carModel: string, carBasePrice: number, isAvailable: boolean){
+    this.carId = carId;
     this.carBrand = carBrand;
     this.carModel = carModel;
     this.carBasePrice = carBasePrice;
-    this.isAvailable = isAvailable
-    ;
+    this.isAvailable = isAvailable;
   }
+
 }
 
+export class Book{
+  car: Car;
+  cusName: string;
+  cusNID: number;
+  cusContact: number;
+  days: number;
+
+  constructor(car: Car, cusName: string, cusNID: number, cusContact: number, days: number){
+    this.car = car;
+    this.cusName = cusName;
+    this.cusNID = cusNID;
+    this.cusContact = cusContact;
+    this.days = days; 
+  }
+
+}

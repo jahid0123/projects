@@ -20,7 +20,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let car of cars; let i = index">
-                <td>{{i + 1}}</td>
+                <td>{{car.carId}}</td>
                 <td>{{car.carBrand}}</td>
                 <td>{{car.carModel}}</td>
                 <td>{{car.carBasePrice}}</td>
@@ -52,6 +52,11 @@
                 </div>
                 <div class="card-body">
                     <form (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Car Id:</label>
+                            <input class="form-control border-success" type="number" [(ngModel)]="car.carId"
+                                name="carId" required />
+                        </div>
                         <div class="mb-3">
                             <label class="form-label fw-bold">Car Brand:</label>
                             <input class="form-control border-success" type="text" [(ngModel)]="car.carBrand"

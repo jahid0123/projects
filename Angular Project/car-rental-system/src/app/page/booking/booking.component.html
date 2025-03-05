@@ -1,37 +1,18 @@
-<div class="container mt-5">
-    <table class="table text-center table-bordered">
-        <thead class="table-dark">
-            <tr>
-                <th>ID</th>
-                <th>BRAND</th>
-                <th>MODEL</th>
-                <th>BASE PRICE</th>
-                <th>Customer Name</th>
-                <th>Days</th>
-                <th>Total Amount</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>T</td>
-                <td>A</td>
-                <td>500</td>
-                <td>Jahid</td>
-                <td>5</td>
-                <td>2500</td>
-                <td>
-                    <!-- Update button -->
-                    <button class="btn btn-primary btn-outline-warning" >
-                        Update
-                    </button>
-
-                    <button class="btn btn-outline-danger btn-secondary" >
-                        Delete
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+<table>
+    <thead>
+        <th>id</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Base Price</th>
+        <th>Availablity</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let car of availableCars;">
+            <td>{{car.carId}}</td>
+            <td>{{car.carBrand}}</td>
+            <td>{{car.carModel}}</td>
+            <td>{{car.carBasePrice}}</td>
+            <td>{{car.isAvailable}}</td>
+        </tr>
+    </tbody>
+</table>

@@ -13,7 +13,7 @@ import { NgFor, NgIf } from '@angular/common';
 export class CarComponent implements OnInit {
 
   cars: Car[] = [];
-  car: Car = new Car('', '', 0, false);
+  car: Car = new Car(0, '', '', 0, false);
   currentIndex: number | null = null; // To store the index of the car being edited
   isUpdate = false;
   modalOpen = false; // Flag to control modal visibility
@@ -41,7 +41,7 @@ export class CarComponent implements OnInit {
     }
 
     localStorage.setItem('car', JSON.stringify(this.cars)); // Save to localStorage
-    this.car = new Car('', '', 0, false); // Reset form
+    this.car = new Car(0, '', '', 0, false); // Reset form
     this.currentIndex = null; // Reset index
     this.isUpdate = false; // Reset update flag
     this.closeModal(); // Close modal
