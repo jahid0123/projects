@@ -1,6 +1,7 @@
 package com.jmjbrothers.first_spring.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,11 @@ public class StudentService {
 
 		repository.deleteById(id);
 
+	}
+
+	public Optional<Student> findStudentById(int id) {
+		// TODO Auto-generated method stub
+		return repository.findById(id);
 	}
 
 }
