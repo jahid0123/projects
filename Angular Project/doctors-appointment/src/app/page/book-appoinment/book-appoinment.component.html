@@ -1,0 +1,50 @@
+<div class="container mt-4">
+    <div class="card shadow-lg p-4 rounded-4">
+      <h3 class="text-center text-primary mb-4">📅 Book an Appointment</h3>
+  
+      <form #appointmentForm="ngForm" (ngSubmit)="appoinment()">
+        <!-- Appointment ID -->
+        <div class="mb-3">
+          <label for="appointmentId" class="form-label"><i class="fa-solid fa-id-badge"></i> 🆔 Appointment ID</label>
+          <input type="number" class="form-control border-primary shadow-sm rounded-pill" [(ngModel)]="bookAppoinment.appoinmentID" name="appointmentId" id="appointmentId" placeholder="Enter Appointment ID" required>
+        </div>
+  
+        <!-- Customer Name -->
+        <div class="mb-3">
+          <label for="customerName" class="form-label"><i class="fa-solid fa-user"></i> 👤 Patient Name</label>
+          <input type="text" class="form-control border-primary shadow-sm rounded-pill" [(ngModel)]="bookAppoinment.customerName" name="customerName" id="customerName" placeholder="Enter Customer Name" required>
+        </div>
+  
+        <!-- Customer Age -->
+        <div class="mb-3">
+          <label for="customerAge" class="form-label"><i class="fa-solid fa-calendar"></i> 🎂 Patient Age</label>
+          <input type="number" class="form-control border-primary shadow-sm rounded-pill" [(ngModel)]="bookAppoinment.customerAge" name="customerAge" id="customerAge" placeholder="Enter Age" required>
+        </div>
+  
+        <!-- Appointment Date -->
+        <div class="mb-3">
+          <label for="appointmentDate" class="form-label"><i class="fa-solid fa-calendar-days"></i> 📅 Appointment Date</label>
+          <input type="date" class="form-control border-primary shadow-sm rounded-pill" [(ngModel)]="bookAppoinment.appoinmentDate" name="appointmentDate" id="appointmentDate" required>
+        </div>
+  
+        <!-- Select Doctor -->
+        <div class="mb-3">
+          <label for="doctorSelect" class="form-label"><i class="fa-solid fa-stethoscope"></i> 🩺 Select Doctor</label>
+          <select class="form-select border-primary shadow-sm rounded-pill" [(ngModel)]="doctor" name="doctorSelect" id="doctorSelect" required>
+            <option value="" disabled>Select a Doctor</option>
+            <option *ngFor="let doctor of doctors" [ngValue]="doctor">
+              👨‍⚕️ {{ doctor.doctorName }} - 🏥 {{ doctor.doctorDept }} - Fee: 💲{{ doctor.doctorFee }}
+            </option>
+          </select>
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-lg shadow-sm rounded-pill">
+            <i class="fa-solid fa-calendar-check"></i> 📝 Save Appointment
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,64 @@
+/* General styling for the card */
+.card {
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form field styling */
+  .form-control, .form-select {
+    border-radius: 30px;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+  }
+  
+  /* Focus state for inputs */
+  .form-control:focus, .form-select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  
+  /* Hover effect for submit button */
+  button:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s;
+  }
+  
+  /* Button styling */
+  button {
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  /* Label and input styling */
+  .form-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #343a40;
+  }
+  
+  /* Shadow effect for the form fields */
+  .shadow-sm {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Table and card container padding */
+  .container {
+    padding: 2rem;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+  
+    .card {
+      border-radius: 10px;
+    }
+  
+    .form-control, .form-select, button {
+      font-size: 1rem;
+      padding: 0.6rem 1.2rem;
+    }
+  }
+  

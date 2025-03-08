@@ -1,0 +1,96 @@
+/* Styling for the card container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Styling for the mat-card */
+.mat-card {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the card */
+.mat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the mat-card-header */
+.card-header {
+  background-color: #e2f9e1;
+  padding: 1rem;
+  border-bottom: 2px solid #28a745;
+  text-align: center;
+}
+
+/* Doctor's name styling */
+.doctor-name {
+  font-size: 1.5rem;
+  color: #343a40;
+  font-weight: bold;
+}
+
+/* Subtitle (Department) styling */
+.mat-card-subtitle {
+  font-size: 1.1rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+}
+
+/* Styling for the doctor image */
+.doctor-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Styling for the card content */
+.card-content {
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: #495057;
+  text-align: center;
+}
+
+/* Styling for the action container */
+.action-container {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Button styling */
+.book-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  background-color: #28a745;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Hover effect for the button */
+.book-btn:hover {
+  transform: scale(1.05);
+  background-color: #218838;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .book-btn {
+    width: 100%;
+    padding: 0.8rem;
+  }
+}

@@ -1,0 +1,111 @@
+<div class="container mt-4">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-success text-white text-center py-3 rounded-top">
+            <h3 class="fw-bold">🩺 Add New Doctor</h3>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()" class="p-3">
+                <div class="mb-3">
+                    <label class="form-label fw-bold"><i class="fas fa-id-badge"></i> 🆔 Doctor ID:</label>
+                    <input class="form-control border-success shadow-sm rounded-pill" type="number" [(ngModel)]="doctor.doctorId"
+                        name="doctorId" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold"><i class="fas fa-user"></i> 👩‍⚕️ Doctor Name:</label>
+                    <input class="form-control border-success shadow-sm rounded-pill" type="text" [(ngModel)]="doctor.doctorName"
+                        name="doctorName" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold"><i class="fas fa-stethoscope"></i> 🏥 Department:</label>
+                    <select class="form-select border-success shadow-sm rounded-pill" [(ngModel)]="doctor.doctorDept"
+                        name="doctorDept" required>
+                        <option value="" disabled selected>-- Select Department --</option>
+                        <option value="Pediatricians">👶 Pediatricians</option>
+                        <option value="Geriatric medicine">👵 Geriatric Medicine</option>
+                        <option value="Dermatologists">🧴 Dermatologists</option>
+                        <option value="Infectious disease">🦠 Infectious Disease</option>
+                        <option value="Ophthalmologists">👁️ Ophthalmologists</option>
+                        <option value="Obstetrician/gynecologists">🤰 Obstetrician/Gynecologists</option>
+                        <option value="Cardiologists">❤️ Cardiologists</option>
+                        <option value="Endocrinologists">💉 Endocrinologists</option>
+                        <option value="Gastroenterologists">🍽️ Gastroenterologists</option>
+                        <option value="Nephrologists">🧑‍⚕️ Nephrologists</option>
+                        <option value="Urologists">🚻 Urologists</option>
+                        <option value="Otolaryngologists">👂 Otolaryngologists</option>
+                        <option value="Oncologists">🎗️ Oncologists</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold"><i class="fas fa-dollar-sign"></i> 💰 Fee:</label>
+                    <input class="form-control border-success shadow-sm rounded-pill" type="number" [(ngModel)]="doctor.doctorFee"
+                        name="doctorFee" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold"><i class="fas fa-graduation-cap"></i> 🎓 Degree:</label>
+                    <input class="form-control border-success shadow-sm rounded-pill" type="text" [(ngModel)]="doctor.doctorDegree"
+                        name="doctorDegree" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold"><i class="fas fa-check-circle"></i> ✅ Availability:</label><br>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" [(ngModel)]="doctor.isAvailable" name="isAvailable"
+                            [value]="true" />
+                        <label class="form-check-label text-success">✔️ Available</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" [(ngModel)]="doctor.isAvailable" name="isAvailable"
+                            [value]="false" />
+                        <label class="form-check-label text-danger">❌ Not Available</label>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success w-50 shadow-lg rounded-pill"><i class="fas fa-plus-circle"></i> ➕ Save Doctor</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <h2 class="text-center p-3">👩‍⚕️ Doctors List</h2>
+    <div class="table-responsive rounded-4">
+        <table class="table text-center table-striped table-hover shadow-lg">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Dept.</th>
+                    <th>Fee</th>
+                    <th>Degree</th>
+                    <th>Availability</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let doctor of doctors; let i = index">
+                    <td>{{ doctor.doctorId }}</td>
+                    <td>{{ doctor.doctorName }}</td>
+                    <td>{{ doctor.doctorDept }}</td>
+                    <td>💲{{ doctor.doctorFee }}</td>
+                    <td>{{ doctor.doctorDegree }}</td>
+                    <td>
+                        <span class="badge"
+                            [ngClass]="{'bg-success': doctor.isAvailable, 'bg-danger': !doctor.isAvailable}">
+                            {{ doctor.isAvailable ? "✔️ Available" : "❌ Not Available" }}
+                        </span>
+                    </td>
+                    <td>
+                        <!-- Update Button -->
+                        <button class="btn btn-warning text-white btn-sm shadow-sm mx-1" (click)="editDoctor(doctor, i)">
+                            ✏️ Update
+                        </button>
+                        <!-- Delete Button -->
+                        <button class="btn btn-danger btn-sm shadow-sm mx-1" (click)="deleteDoctor(i)">
+                            🗑️ Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

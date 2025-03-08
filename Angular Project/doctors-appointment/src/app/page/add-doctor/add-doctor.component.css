@@ -1,0 +1,69 @@
+/* General styling for the card */
+.card {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form fields and inputs styling */
+.form-control, .form-select {
+    border-radius: 30px;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Rounded button for submit */
+button {
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+}
+
+/* Label and form elements styling */
+.form-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Shadow effect on form fields */
+.shadow-sm {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-lg {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Form and card padding */
+.card-body {
+    padding: 2rem;
+}
+
+/* Padding for the card header */
+.card-header {
+    padding: 1.5rem 1rem;
+    font-size: 1.3rem;
+}
+
+/* Radio button styling */
+.form-check-label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+}

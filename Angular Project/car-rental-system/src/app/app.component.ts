@@ -33,16 +33,18 @@ export class Car{
 export class Book{
   car: Car;
   cusName: string;
-  cusNID: number;
-  cusContact: number;
+  cusNID: string;
+  cusContact: string;
   days: number;
+  totalAmount: number;
 
-  constructor(car: Car, cusName: string, cusNID: number, cusContact: number, days: number){
+  constructor(car: Car, cusName: string, cusNID: string, cusContact: string, days: number){
     this.car = car;
     this.cusName = cusName;
     this.cusNID = cusNID;
     this.cusContact = cusContact;
     this.days = days; 
+    this.totalAmount = car.carBasePrice * days;
   }
 
 }

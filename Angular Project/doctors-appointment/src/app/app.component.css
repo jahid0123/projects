@@ -1,0 +1,46 @@
+/* Background color and hover effects */
+.bg-success {
+    background-color: #28a745 !important;
+}
+
+.navbar {
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #fff !important;
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    background-color: #4CAF50;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+}
+
+.navbar-toggler-icon {
+    background-color: #fff !important;
+}
+
+.navbar-toggler {
+    border: none !important;
+}
+
+/* Styling for smaller devices */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #28a745;
+        border-radius: 8px;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+        padding: 1rem;
+    }
+}

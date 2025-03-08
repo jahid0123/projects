@@ -1,0 +1,43 @@
+<div class="container mt-4">
+    <div class="card shadow-lg p-4 rounded-4">
+        <h3 class="text-center text-primary mb-4">
+            <i class="fas fa-calendar-check"></i> Appointment List
+        </h3>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover shadow-sm rounded-4">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th><i class="fas fa-id-card"></i> App ID</th>
+                        <th><i class="fas fa-user"></i> Patient Name</th>
+                        <th><i class="fas fa-calendar-alt"></i> Age</th>
+                        <th><i class="fas fa-calendar-day"></i> Appointment Date</th>
+                        <th><i class="fas fa-user-md"></i> Doctor</th>
+                        <th><i class="fas fa-cogs"></i> Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of bookings; let i = index" class="table-row align-middle">
+                        <td><span class="badge bg-secondary">{{ book.appoinmentID }}</span></td>
+                        <td class="fw-semibold">{{ book.customerName }}</td>
+                        <td><span class="badge bg-info text-dark">{{ book.customerAge }} years</span></td>
+                        <td><span class="badge bg-success">{{ book.appoinmentDate}}</span></td>
+                        <td>
+                            <span class="fw-bold text-primary">
+                                <i class="fas fa-user-md"></i> {{ book.doctor.doctorName }}
+                            </span>
+                            <br>
+                            <span class="text-muted small">{{ book.doctor.doctorDept }}</span>
+                        </td>
+                        <td>
+                            <!-- Delete Button -->
+                            <button class="btn btn-danger btn-sm shadow-sm mx-1 delete-btn" (click)="deleteBooking(i)">
+                                <i class="fas fa-trash-alt"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

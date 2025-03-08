@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Car } from '../../app.component';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-car',
-  imports: [FormsModule, NgFor, NgIf],
+  imports: [FormsModule, NgFor, NgIf, NgClass],
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.css']
 })
@@ -58,6 +58,7 @@ export class CarComponent implements OnInit {
     if (confirm('Are you sure you want to delete this car?')) {
       this.cars.splice(index, 1); // Remove the car at the given index
       localStorage.setItem('car', JSON.stringify(this.cars)); // Save updated list to localStorage
+
     }
   }
 
