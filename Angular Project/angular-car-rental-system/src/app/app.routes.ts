@@ -11,5 +11,5 @@ export const routes: Routes = [
     {path: 'booking', component: BookingComponent},
     {path: 'return-car', component: ReturnCarComponent},
     {path: 'booking-history', component: BookingHistoryComponent},
-    { path: '**', redirectTo: 'add-car' }
+    { path: '**', redirectTo: 'all-cars' }
 ];
