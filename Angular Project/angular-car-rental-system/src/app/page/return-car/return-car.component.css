@@ -1,0 +1,35 @@
+#container {
+  background-image: url('/assets/car.jpg'); /* Correct path */
+  background-size: cover; /* Ensures the image covers the whole container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width (change from 10vw if needed) */
+}
+
+
+
+  .card {
+    border: none;
+  }
+
+  .card-header h3 {
+    font-weight: 600;
+  }
+
+  .form-control {
+    border-radius: 8px;
+  }
+
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+

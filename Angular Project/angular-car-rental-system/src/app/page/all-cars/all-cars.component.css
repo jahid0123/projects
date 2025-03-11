@@ -1,0 +1,41 @@
+.custom-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 15px;
+  }
+  
+  .custom-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .car-image {
+    height: 180px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  
+  .price-tag {
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  .book-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  .book-btn:hover {
+    background: #ff9800 !important;
+    color: white;
+  }
+  

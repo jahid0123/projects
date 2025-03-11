@@ -1,0 +1,23 @@
+<div id="container">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card shadow-lg rounded-4 p-4" style="max-width: 400px; width: 100%;">
+            <div class="card-header text-center text-white py-2" 
+                style="background: linear-gradient(135deg, #1e3c72, #2a5298);">
+                <h3 class="mb-0">🔄 Return Car</h3>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="returnCar()">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Car ID:</label>
+                        <input class="form-control border-success" type="number" [(ngModel)]="carId" name="carId"
+                            placeholder="Enter Car ID" required />
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success w-100 shadow-sm">Return Car</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>

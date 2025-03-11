@@ -1,0 +1,45 @@
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card shadow-lg rounded-4 overflow-hidden p-3" style="max-width: 650px; width: 100%;">
+        <div class="card-header text-white text-center py-2" 
+            style="background: linear-gradient(135deg, #5a8d66, hsla(192, 85%, 33%, 0.824));">
+            <h3 class="mb-0">🚗 Car Booking</h3>
+        </div>
+        <div class="card-body">
+            <form (ngSubmit)="onBooking()">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">👤 Customer Name:</label>
+                    <input class="form-control border-success" type="text" [(ngModel)]="books.cusName" name="cusName"
+                        placeholder="Enter Full Name" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">🆔 NID/Passport:</label>
+                    <input class="form-control border-success" type="text" [(ngModel)]="books.cusNID" name="cusNID"
+                        placeholder="Enter NID/Passport Number" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">📞 Contact Number:</label>
+                    <input class="form-control border-success" type="text" [(ngModel)]="books.cusContact" name="cusContact"
+                        placeholder="Enter Contact Number" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">🚘 Select Car:</label>
+                    <select class="form-select border-success" [(ngModel)]="selectedCar" name="selectedCar" required> 
+                        <option *ngFor="let car of availableCars" [ngValue]="car">
+                            {{ car.carBrand }} - {{ car.carModel }} (💲{{ car.carBasePrice }}/day)
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">📅 Days for Rent:</label>
+                    <input class="form-control border-success" type="number" [(ngModel)]="books.days" name="days"
+                        placeholder="Enter Number of Days" min="1" required />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success w-100 shadow-sm" style="font-size: 18px;">
+                        ✅ Book Now
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

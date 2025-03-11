@@ -1,0 +1,105 @@
+<!-- Car List -->
+<div class="container mt-5">
+    <h2 class="text-center fw-bold text-success">🚘 CARS INFORMATION</h2>
+
+    <!-- Button to Open Modal -->
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary mb-3 shadow-sm px-4 py-2 fw-bold" (click)="openModal()">
+            ➕ Add Car
+        </button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table text-center table-striped table-hover shadow-lg">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Base Price</th>
+                    <th>Availability</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let car of cars; let i = index">
+                    <td>{{ car.carId }}</td>
+                    <td>{{ car.carBrand }}</td>
+                    <td>{{ car.carModel }}</td>
+                    <td>💲{{ car.carBasePrice }}</td>
+                    <td>
+                        <span class="badge" [ngClass]="car.isAvailable ? 'bg-success' : 'bg-danger'">
+                            {{ car.isAvailable ? "Available" : "Not Available" }}
+                        </span>
+                    </td>
+                    <td>
+                        <!-- Update Button -->
+                        <button class="btn btn-warning text-white btn-sm shadow-sm mx-1" (click)="editCar(car, i)">
+                            ✏️ Update
+                        </button>
+                        <!-- Delete Button -->
+                        <button class="btn btn-danger btn-sm shadow-sm mx-1" (click)="deleteCar(i)">
+                            🗑️ Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal for Adding/Updating Car -->
+<div *ngIf="modalOpen" class="modal fade show" tabindex="-1" style="display: block; background: rgba(0, 0, 0, 0.5);">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="card shadow-lg rounded-4">
+                <div class="card-header text-white text-center py-2 d-flex justify-content-between"
+                    style="background: linear-gradient(135deg, #5a8d66, hsla(192, 85%, 33%, 0.824));">
+                    <h3 class="m-0">🚗 Car Rental Form</h3>
+                    <button type="button" class="btn-close bg-white" (click)="closeModal()" aria-label="Close"></button>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">🔢 Car ID:</label>
+                            <input class="form-control border-success" type="number" [(ngModel)]="car.carId"
+                                name="carId" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">🏷️ Car Brand:</label>
+                            <input class="form-control border-success" type="text" [(ngModel)]="car.carBrand"
+                                name="carBrand" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">🚗 Car Model:</label>
+                            <input class="form-control border-success" type="text" [(ngModel)]="car.carModel"
+                                name="carModel" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">💲 Base Price per Day:</label>
+                            <input class="form-control border-success" type="number" [(ngModel)]="car.carBasePrice"
+                                name="carBasePrice" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">✅ Availability:</label><br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" [(ngModel)]="car.isAvailable"
+                                    name="isAvailable" [value]="true" />
+                                <label class="form-check-label text-success">✔️ Yes</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" [(ngModel)]="car.isAvailable"
+                                    name="isAvailable" [value]="false" />
+                                <label class="form-check-label text-danger">❌ No</label>
+                            </div>
+                        </div>
+                        <div class="text-center d-flex justify-content-between">
+                            <button type="submit" class="btn btn-success w-50 shadow-sm">✅ Submit</button>
+                            <button type="button" class="btn btn-secondary" (click)="closeModal()">❌ Close</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
