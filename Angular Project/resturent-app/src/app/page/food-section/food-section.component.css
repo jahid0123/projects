@@ -1,0 +1,94 @@
+.card {
+    background-color: #f8f9fa;
+    border-radius: 20px;
+  }
+
+  .form-control {
+    border-radius: 10px;
+    padding: 10px 15px;
+  }
+
+  .form-label {
+    font-weight: 600;
+    color: #333;
+  }
+
+  .btn-success {
+    background-color: #28a745;
+    border: none;
+  }
+
+  .btn-success:hover {
+    background-color: #218838;
+  }
+
+  .btn-warning {
+    background-color: #ffc107;
+    border: none;
+  }
+
+  .btn-warning:hover {
+    background-color: #e0a800;
+  }
+
+  .btn-danger {
+    background-color: #dc3545;
+    border: none;
+  }
+
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
+
+  /* Table Styles */
+  .table {
+    font-family: 'Roboto', sans-serif;
+    border-radius: 12px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f1f1f1;
+  }
+
+  .table-hover tbody tr:hover {
+    background-color: #e9ecef;
+  }
+
+  .table th, .table td {
+    padding: 15px;
+  }
+
+  .table td, .table th {
+    vertical-align: middle;
+  }
+
+  .table-dark {
+    background-color: #343a40;
+  }
+
+  .table-dark th {
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Badge Colors for Availability */
+  .badge.bg-success {
+    background-color: #28a745;
+  }
+
+  .badge.bg-danger {
+    background-color: #dc3545;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 767px) {
+    .container {
+      padding: 15px;
+    }
+
+    .card {
+      padding: 20px;
+    }
+  }

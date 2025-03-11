@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <h2 class="text-center text-success fw-bold mb-4" style="font-family: 'Arial', sans-serif;">📜 Order History</h2>
+    
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered shadow-lg rounded-3">
+        <thead class="thead-dark" style="background: linear-gradient(to right, #007bff, #00c6ff); color: white;">
+          <tr>
+            <th class="text-center">🆔 Order ID</th>
+            <th class="text-center">👤 Customer Name</th>
+            <th class="text-center">📅 Customer Contact</th>
+            <th class="text-center">🍽️ Items Ordered</th>
+            <th class="text-center">💰 Total Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through orderList and display each order -->
+          <tr *ngFor="let order of orders" class="table-row">
+            <td class="text-center">{{ order.orderID }}</td>
+            <td>{{ order.customerName }}</td>
+            <td class="text-center">{{ order.customerContact }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let item of order.cart.foodList">
+                  {{ item.foodName }} ({{ item.foodPrice }} BDT)
+                </li>
+              </ul>
+            </td>
+            <td class="text-center fw-bold text-success">{{ order.cart.totalPrice }} BDT</td>
+          </tr>
+          <!-- Display message if no orders are available -->
+          <tr *ngIf="orders.length === 0">
+            <td colspan="5" class="text-center text-muted">No orders found</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <h2 class="text-center text-success fw-bold mb-5">
+      🍽️ Available Food Items 🍕
+    </h2>
+  
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let food of foods">
+        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+          <!-- Food Image -->
+          <img src="kfc2.webp" class="card-img-top rounded-4" alt="Food Image">
+  
+          <div class="card-body">
+            <!-- Food Name -->
+            <h5 class="card-title fw-bold text-primary">
+              🍔 {{ food.foodName }}
+            </h5>
+  
+            <!-- Description -->
+            <p class="card-text text-muted" style="font-size: 1rem; line-height: 1.4;">
+              📝 {{ food.foodDes }}
+            </p>
+  
+            <!-- Food Price -->
+            <p class="fw-semibold text-success">
+              💲 {{ food.foodPrice }} /-
+            </p>
+          </div>
+  
+          <!-- Card Footer with Add to Cart Button -->
+          <div class="card-footer bg-white text-center">
+            <button class="btn btn-lg btn-success shadow-lg rounded-3 w-100"
+              [disabled]="!food.isAvailable" (click)="addToCart(food)">
+              <i class="fa-solid fa-cart-plus"></i> 🛒 Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

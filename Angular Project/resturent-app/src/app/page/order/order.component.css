@@ -1,0 +1,34 @@
+.hover-scale:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Table styles */
+.table-bordered {
+    border-color: #e0e7ff;
+}
+.table-hover tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* Input field focus styles */
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Card styling */
+.card {
+    border-radius: 20px;
+    padding: 30px;
+}
+.card h3 {
+    font-size: 2rem;
+}
+
+/* Responsive padding for mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}

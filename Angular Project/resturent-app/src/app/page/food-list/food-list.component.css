@@ -1,0 +1,38 @@
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Card Image Styling */
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .card-img-top:hover {
+    transform: scale(1.05);
+  }
+
+  /* Button Styling */
+  .btn-success:hover {
+    background-color: #28a745;
+    border-color: #28a745;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Adjusting font size and spacing for the food description */
+  .card-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  /* Additional custom styling */
+  .card-footer {
+    padding: 1.25rem 0;
+  }

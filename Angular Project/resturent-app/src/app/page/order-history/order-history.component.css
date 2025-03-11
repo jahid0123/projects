@@ -1,0 +1,63 @@
+
+/* Custom styles */
+.table {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  padding: 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.table-row:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+.thead-dark th {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.fw-bold {
+  font-weight: 700;
+}
+
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.table td ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.table td ul li {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.table-bordered {
+  border: 1px solid #ddd;
+}
+
+.table-responsive {
+  margin-top: 30px;
+}
+
+/* No orders found message */
+.text-muted {
+  font-style: italic;
+  color: #777;
+}
+

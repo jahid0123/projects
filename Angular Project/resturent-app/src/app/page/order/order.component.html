@@ -1,0 +1,78 @@
+<div class="container mt-5">
+    <div class="card shadow-xl p-5 rounded-5 border-0" style="background: linear-gradient(135deg, #f8f9fa, #e0e7ff);">
+        <h3 class="text-center text-primary mb-5 fw-bold">
+            🍽️ Purchase Your Meal 🛒
+        </h3>
+
+        <form (ngSubmit)="buyFood()">
+            <div class="row">
+                <!-- Order ID -->
+                <div class="col-md-4 mb-4">
+                    <label for="orderID" class="form-label text-dark fw-semibold">
+                        🆔 Order ID
+                    </label>
+                    <input type="number" id="orderID" class="form-control rounded-3 shadow-sm border-2" 
+                        [(ngModel)]="order.orderID" name="orderID" placeholder="Enter Order ID" required>
+                </div>
+
+                <!-- Customer Name -->
+                <div class="col-md-8 mb-4">
+                    <label for="customerName" class="form-label text-dark fw-semibold">
+                        👤 Customer Name
+                    </label>
+                    <input type="text" id="customerName" class="form-control rounded-3 shadow-sm border-2" 
+                        [(ngModel)]="order.customerName" name="customerName" placeholder="Enter Customer Name" required>
+                </div>
+            </div>
+
+            <!-- Customer Contact -->
+            <div class="col-md-8 mb-4">
+                <label for="customerContact" class="form-label text-dark fw-semibold">
+                    📞 Customer Contact
+                </label>
+                <input type="text" id="customerContact" class="form-control rounded-3 shadow-sm border-2" 
+                    [(ngModel)]="order.customerContact" name="customerContact" placeholder="Enter Customer Contact" required>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-light">
+                            <tr>
+                                <th>🍴 Item Name</th>
+                                <th>💲 Item Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of cartFoods; let i = index">
+                                <td>{{ item.foodName }}</td>
+                                <td>{{ item.foodPrice }} BDT</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Total Price -->
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+                    <h5 class="fw-semibold">
+                        💰 Total Price: <span class="text-success fs-4">{{ cart.totalPrice }} BDT</span>
+                    </h5>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid mt-4">
+                <button type="submit" class="btn btn-lg btn-success rounded-3 shadow-lg fw-bold hover-scale">
+                    🛍️ ➕ Complete Purchase
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Custom CSS Styles -->
+<style>
+    /* Hover effects */
+   
+</style>

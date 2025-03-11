@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger shadow-lg">
+  <div class="container">
+    <!-- 🍽️ Brand Logo -->
+    <a class="navbar-brand fw-bold text-white" href="#">
+      🍽️ Foodie Admin
+    </a>
+
+    <!-- 🔽 Toggler Button for Mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/food-list" routerLink="/food-list">🍕 All Available Food Items</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="/order-manage" routerLink="/order">
+            📦 Order Management
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="/food-manage" routerLink="/food-manage">
+            🍔 Food Management
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  href="/history" routerLink="/history">
+            📜 Order History
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<router-outlet></router-outlet>
