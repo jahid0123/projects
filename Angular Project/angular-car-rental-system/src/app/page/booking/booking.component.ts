@@ -4,16 +4,13 @@ import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-booking',
   imports: [FormsModule, NgFor],
   templateUrl: './booking.component.html',
-  styleUrl: './booking.component.css'
+  styleUrl: './booking.component.css',
 })
 export class BookingComponent implements OnInit {
-
-
   bookings: Book[] = [];
   cars: Car[] = [];
   car: Car = new Car(0, '', '', 0, false);
@@ -22,41 +19,48 @@ export class BookingComponent implements OnInit {
   books: Book = new Book(this.selectedCar, '', '', '', 0);
   isUpdate: boolean = false;
   carid: number | null = null;
-  
 
+  compareCar(c1: Car, c2: Car) {
+    return c1 && c2 ? c1.carId == c2.carId : c1 === c2;
+  }
 
   constructor(private router: Router) {
-      const nav = this.router.getCurrentNavigation();
-      if (nav?.extras?.state?.['booking']) {
-        this.car = nav.extras.state['booking'];
-        this.isUpdate = true;
-      }
+    const nav = this.router.getCurrentNavigation();
+    if (nav?.extras?.state?.['car']) {
+      this.selectedCar = nav.extras.state['car'];
+      this.isUpdate = true;
     }
+  }
 
   ngOnInit(): void {
-
     let allCar = JSON.parse(localStorage.getItem('car') || '[]');
     this.cars = allCar;
     this.availableCars = allCar;
-    this.availableCars = this.availableCars.filter(car => car.isAvailable === true);
+    this.availableCars = this.availableCars.filter(
+      (car) => car.isAvailable === true,
+    );
     let allBookings = JSON.parse(localStorage.getItem('booking') || '[]');
     this.bookings = allBookings;
   }
 
   onBooking(): void {
-    if (!this.selectedCar || !this.books.cusName || !this.books.cusNID || !this.books.cusContact || !this.books.days) {
+    if (
+      !this.selectedCar ||
+      !this.books.cusName ||
+      !this.books.cusNID ||
+      !this.books.cusContact ||
+      !this.books.days
+    ) {
       alert("Please fill all fields before booking.");
       return;
     }
-
-    
 
     // Assign selectedCar to booking
     this.books.car = this.selectedCar;
     this.books.totalAmount = this.selectedCar.carBasePrice * this.books.days;
 
-     // Show confirmation dialog
-     if (confirm(`Confirm Booking? \nTotal Price: ${this.books.totalAmount}`)) {
+    // Show confirmation dialog
+    if (confirm(`Confirm Booking? \nTotal Price: ${this.books.totalAmount}`)) {
       alert("Car booked successfully!");
     }
 
@@ -68,13 +72,13 @@ export class BookingComponent implements OnInit {
     this.selectedCar.isAvailable = false;
 
     // Update the cars list and save in localStorage
-    this.cars = this.cars.map(car => (car.carId === this.selectedCar.carId ? this.selectedCar : car));
+    this.cars = this.cars.map((car) =>
+      car.carId === this.selectedCar.carId ? this.selectedCar : car,
+    );
     localStorage.setItem('car', JSON.stringify(this.cars));
 
-   
-
     // Refresh available cars
-    this.availableCars = this.cars.filter(car => car.isAvailable === true);
+    this.availableCars = this.cars.filter((car) => car.isAvailable === true);
 
     // Reset form fields
     this.books = new Book(new Car(0, '', '', 0, false), '', '', '', 0);
@@ -82,8 +86,6 @@ export class BookingComponent implements OnInit {
     this.isUpdate = false;
     this.carid = null;
   }
-
- 
 
   editCar(car: Car, index: number): void {
     this.car = { ...car }; // Clone car object to avoid modifying directly
@@ -96,7 +98,5 @@ export class BookingComponent implements OnInit {
       this.bookings.splice(index, 1); // Remove the car at the given index
       localStorage.setItem('booking', JSON.stringify(this.bookings)); // Save updated list to localStorage
     }
-
   }
-
 }
