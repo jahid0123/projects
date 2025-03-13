@@ -1,0 +1,100 @@
+<h1 class="form-title">Books by Category</h1>
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+    <!-- Category Name -->
+    <div class="form-group">
+      <label for="categoryName">Category Name:</label>
+      <input
+        type="text"
+        name="categoryName"
+        id="categoryName"
+        [(ngModel)]="book.categoryName"
+        #categoryName="ngModel"
+        required
+      />
+      <div *ngIf="categoryName.errors?.['required'] && categoryName.touched">
+        Category Name is required.
+      </div>
+    </div>
+
+    <!-- Book Name -->
+    <div class="form-group">
+      <label for="bookName">Book Name:</label>
+      <input
+        type="text"
+        name="bookName"
+        id="bookName"
+        [(ngModel)]="book.bookName"
+        #bookName="ngModel"
+        required
+      />
+      <div *ngIf="bookName.errors?.['required'] && bookName.touched">
+        Book Name is required.
+      </div>
+    </div>
+
+    <!-- Price -->
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input
+        type="number"
+        name="price"
+        id="price"
+        [(ngModel)]="book.price"
+        #price="ngModel"
+        required
+        min="1"
+      />
+      <div *ngIf="price.errors?.['required'] && price.touched">
+        Price is required.
+      </div>
+      <div *ngIf="price.errors?.['min'] && price.touched">
+        Price must be greater than 0.
+      </div>
+    </div>
+
+    <!-- Book Image -->
+    <div class="form-group">
+        <label for="imageUrl">Book Image URL:</label>
+        <input
+          type="text"
+          name="imageUrl"
+          id="imageUrl"
+          [(ngModel)]="book.imageUrl"
+          #imageUrl="ngModel"
+          placeholder="Enter image URL"
+        />
+        <div *ngIf="imageUrl.errors?.['required'] && imageUrl.touched" class="error-message">
+          Image URL is required.
+        </div>
+      </div> 
+  
+    
+  
+
+    <!-- Submit Button -->
+    <div class="form-action">
+      <button type="submit" >
+        {{ isUpdate ? 'Update' : 'Submit' }}
+      </button>
+    </div>
+  </form>
+</div>
+<h1 class="form-title">Books List</h1>
+<div class="container">
+  <div *ngIf="books.length === 0" class="no-books-message">
+    No books have been added yet.
+  </div>
+
+  <div *ngFor="let book of books" class="book-item">
+    <div class="book-details">
+      <img *ngIf="book.imageUrl" [src]="book.imageUrl" alt="Book Image" class="book-image" />
+      <div class="book-info">
+        <h3>{{ book.bookName }}</h3>
+        <p><strong>Books Name:</strong> {{ book.bookName }}</p>
+        <p><strong>Category:</strong> {{ book.categoryName }}</p>
+        <p><strong>Price:</strong> ${{ book.price }}</p>
+      </div>
+    </div>
+  </div>
+</div>

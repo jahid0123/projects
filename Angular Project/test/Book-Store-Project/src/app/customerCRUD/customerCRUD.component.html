@@ -1,0 +1,84 @@
+<h1>Form to Add/Update Customer</h1>
+<form (ngSubmit)="onSubmit()" >
+  <table>
+    <div>
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        placeholder="Enter the name of customer"
+        name="name"
+        id="name"
+        [(ngModel)]="customer.name"
+        required
+      />
+    </div>
+    <br />
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        placeholder="Enter email"
+        name="email"
+        id="email"
+        [(ngModel)]="customer.email"
+        required
+      />
+    </div>
+    <br />
+    <div>
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        placeholder="Enter password"
+        name="password"
+        id="password"
+        [(ngModel)]="customer.password"
+        required
+      />
+    </div>
+    <br />
+    <div>
+      <label for="nid">NID:</label>
+      <input
+        type="text"
+        placeholder="Enter National ID"
+        name="nid"
+        id="nid"
+        [(ngModel)]="customer.nid"
+        required
+      />
+    </div>
+    <br />
+    <div>
+      <label for="phone">Phone:</label>
+      <input
+        type="tel"
+        placeholder="Enter phone number"
+        name="phone"
+        id="phone"
+        [(ngModel)]="customer.phone"
+        required
+      />
+    </div>
+    <br />
+    <div>
+      <label for="address">Address:</label>
+      <input
+        type="text"
+        placeholder="Enter address"
+        name="address"
+        id="address"
+        [(ngModel)]="customer.address"
+        required
+      />
+    </div>
+    <br />
+
+    <div>
+      <button type="submit" class="btn btn-success">
+        {{ isUpdate ? 'Update' : 'Submit' }}
+      </button>
+    </div>
+  </table>
+</form>
+

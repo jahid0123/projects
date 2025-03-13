@@ -1,0 +1,143 @@
+/* Global styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container styles */
+  .container {
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form title styles */
+  .form-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #5a3d5c;
+  }
+  
+  /* Form group styles */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #5a3d5c;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #5a3d5c;
+    outline: none;
+  }
+  
+  /* Error message styles */
+  .error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Submit button styles */
+  .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #5a3d5c;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #804a77;
+  }
+  
+  .submit-btn:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Hover effect on inputs */
+  .form-group input:focus {
+    border-color: #5a3d5c;
+  }
+  
+  .form-action {
+    margin-top: 20px;
+  }
+  
+  /* Add some spacing between form elements */
+  .form-group + .form-group {
+    margin-top: 15px;
+  }
+  /* Book List Styles */
+.container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .no-books-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: gray;
+  }
+  
+  .book-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .book-info {
+    flex: 1;
+  }
+  
+  .book-info h3 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  
+  .book-info p {
+    margin: 5px 0;
+  }
+  
+  

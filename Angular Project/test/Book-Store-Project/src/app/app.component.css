@@ -1,0 +1,22 @@
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    max-width: 60%; /* Adjust width as needed */
+}
+
+/* Center images properly */
+.carousel-item img {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    object-fit: cover;
+}
+
+/* Style for captions */
+.carousel-caption {
+    background: rgba(255, 255, 255, 0.5); /* Light background for better visibility */
+    color: black !important;
+    padding: 10px;
+    border-radius: 5px;
+}
