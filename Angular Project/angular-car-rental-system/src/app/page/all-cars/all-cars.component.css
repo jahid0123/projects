@@ -1,41 +1,102 @@
+/* General Styles */
+body {
+  background-color: #f5f5f5;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Title Styling */
+h1 {
+  color: #4A90E2;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Card Styling */
 .custom-card {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    background: linear-gradient(135deg, #f8f9fa, #ffffff);
-    padding: 15px;
-    border-radius: 12px;
-    cursor: pointer;
-    margin: 15px;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(145deg, #FFB6C1, #FF8C00);
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Card Header */
+.card-header {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+}
+
+.car-name {
+  font-size: 1.6rem;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.card-header .mat-card-subtitle {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Image Styling */
+.car-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Card Content */
+.card-content {
+  font-size: 1.1rem;
+  color: #34495e;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.price-tag {
+  font-size: 1.25rem;
+  color: #34495e;
+}
+
+.text-success {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Button Styling */
+.book-btn {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .col-md-4 {
+    margin-bottom: 20px;
   }
-  
-  .custom-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  .custom-card {
+    margin-bottom: 30px;
   }
-  
-  .car-image {
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .card-content {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-  
-  .price-tag {
-    font-weight: bold;
-    color: #28a745;
-  }
-  
   .book-btn {
-    font-size: 1rem;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-weight: bold;
+    width: 100%;
   }
-  
-  .book-btn:hover {
-    background: #ff9800 !important;
-    color: white;
-  }
-  
+}

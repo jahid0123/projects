@@ -1,7 +1,6 @@
-
-<!-- Booking Information Table -->
+<!-- Booking Information Table as Cards -->
 <div class="container">
-    <h2 class="text-center mt-5 fw-bold text-success">📜 Booking History</h2>
+    <h2 class="text-center mt-3 mb-2 fw-bold text-primary">Booking History</h2>
 
     <div class="table-responsive">
         <table class="table text-center table-striped table-hover mt-3 shadow-lg">
@@ -20,7 +19,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let book of bookings; let i = index">
+                <tr *ngFor="let book of bookings; let i = index" class="booking-card">
                     <td>{{ i + 1 }}</td>
                     <td>{{ book.cusName }}</td>
                     <td>{{ book.cusContact }}</td>

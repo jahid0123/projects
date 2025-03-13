@@ -1,0 +1,86 @@
+/* Table Styling */
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  thead {
+    background-color: #3498db; /* Header Background */
+    color: white;
+  }
+  
+  th, td {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .booking-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .booking-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  td {
+    vertical-align: middle;
+  }
+  
+  /* Styling for the Delete button */
+  .btn-danger {
+    background-color: #e74c3c;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c0392b;
+  }
+  
+  .text-success {
+    color: #27ae60;
+  }
+  
+  tbody tr td {
+    border: 1px solid #ddd; /* Optional border for each card-like row */
+  }
+  
+  /* Hover effects for table rows */
+  tbody tr:hover {
+    background-color: #f5f5f5; /* Light gray hover effect */
+  }
+  
+  @media (max-width: 767px) {
+    /* Stack the table into a single column for mobile responsiveness */
+    .booking-card {
+      display: block;
+      margin-bottom: 15px;
+    }
+  
+    td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      text-align: left;
+    }
+  
+    td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  
+    th, td {
+      text-align: left;
+    }
+  }
+  
