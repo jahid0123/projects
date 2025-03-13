@@ -17,6 +17,8 @@ export class FoodListComponent implements OnInit{
   ngOnInit(): void {
     let allFoods = JSON.parse(localStorage.getItem('foods') || '[]');
     this.foods = allFoods;
+    this.foods = this.foods.filter(food => food.isAvailable === true);
+
     let cartItem = JSON.parse(localStorage.getItem('cartfoods') || '[]');
     this.carts = cartItem;
   }
