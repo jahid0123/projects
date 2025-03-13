@@ -1,0 +1,85 @@
+<div class="container">
+  <h1 class="form-title">Register Customer</h1>
+<form id="registration-form" class="customer-form" (ngSubmit)="RegisterCustomer()">
+  <div class="form-group">
+    <label for="customername" class="form-label">Customer's Name:</label>
+    <input type="text" id="customername" name="customername" placeholder="Enter customer's name" [(ngModel)]="customer.customername" required class="form-input">
+    <i class="fa fa-user"></i>
+    <div class="error-message" id="customername-error"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter email" [(ngModel)]="customer.email" required class="form-input">
+    <i class="fa fa-envelope"></i>
+    <div class="error-message" id="email-error"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="password" class="form-label">Password:</label>
+    <input type="password" id="password" name="password" placeholder="Enter password"  [(ngModel)]="customer.password"required class="form-input">
+    <i class="fa fa-lock"></i>
+    <div class="error-message" id="password-error"></div>
+  </div>
+
+  <div class="form-group">
+    <label for="nid" class="form-label">NID:</label>
+    <input type="text" id="nid" name="nid" placeholder="Enter National ID" [(ngModel)]="customer.nid" required class="form-input">
+  </div>
+
+  <div class="form-group">
+    <label for="phone" class="form-label">Phone:</label>
+    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" [(ngModel)]="customer.phone" required class="form-input">
+  </div>
+
+  <div class="form-group">
+    <label for="address" class="form-label">Address:</label>
+    <input type="text" id="address" name="address" placeholder="Enter address" [(ngModel)]="customer.address" required class="form-input">
+  </div>
+
+  <div class="form-action">
+    <button type="submit" > {{ isUpdate ? 'Update' : 'Register' }}</button>
+    <!-- <button type="submit" class="btn btn-success"(click)="editCustomer(customer.nid)">
+      {{ isUpdate ? 'Update' : 'Submit' }}
+    </button> -->
+  </div>
+</form>
+
+<script>
+  document.getElementById('registtion-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let isValid = true;
+    const customername = document.getElementById('usercustomernamename');
+    const email = document.getElraementById('email');
+    const password = document.getElementById('password');
+
+    if (username.value.trim() === '') {
+      document.getElementById('customername-error').textContent = 'Username is required';
+      isValid = false;
+    } else {
+      document.getElementById('customername-error').textContent = '';
+    }
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!emailPattern.test(email.value.trim())) {
+      document.getElementById('email-error').textContent = 'Please enter a valid email';
+      isValid = false;
+    } else {
+      document.getElementById('email-error').textContent = '';
+    }
+
+    if (password.value.trim().length < 6) {
+      document.getElementById('password-error').textContent = 'Password must be at least 6 characters';
+      isValid = false;
+    } else {
+      document.getElementById('password-error').textContent = '';
+    }
+
+    if (isValid) {
+      alert('Form submitted successfully!');
+    } else {
+      alert('Please fix the errors before submitting.');
+    }
+  });
+</script>
+</div>

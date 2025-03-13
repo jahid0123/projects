@@ -1,0 +1,44 @@
+<div class="container">
+<table class="table table-striped book-table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>NID</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+      @for (customer of customers; track customers) {
+        <tr>
+      <td>{{ customers.indexOf(customer) + 1}}</td>
+      <td>{{ customer.customername }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{customer.nid }}</td>
+      <td>{{ customer.phone }}</td>
+      <td>{{ customer.address }}</td>
+      <td>
+        <!-- Update Button -->
+        <button class="btn  btn-outline-danger btn-secondary"
+          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+          (click)="editCustomer(customer)">
+          Update
+        </button>
+
+        <!-- Delete Button -->
+        <button class="btn btn-danger  btn-secondary"
+          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+          (click)="deleteCustomer(customer)">
+          Delete
+        </button>
+      </td>
+     
+    </tr>
+  }
+  </tbody>
+</table>
+</div>
