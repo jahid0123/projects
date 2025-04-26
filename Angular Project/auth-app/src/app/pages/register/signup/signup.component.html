@@ -1,0 +1,43 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="container mt-5 p-4 bg-white border rounded shadow-sm" style="max-width: 600px;">
+    <h3 class="mb-4 text-center">Register</h3>
+  
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+  
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" [(ngModel)]="register.email" required />
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" [(ngModel)]="register.password" required />
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input type="text" name="phoneNumber" class="form-control" [(ngModel)]="register.phoneNumber" required />
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">First Name</label>
+      <input type="text" name="firstName" class="form-control" [(ngModel)]="register.firstName" required />
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Last Name</label>
+      <input type="text" name="lastName" class="form-control" [(ngModel)]="register.lastName" required />
+    </div>
+  
+    <div class="mb-3">
+      <label class="form-label">Role</label>
+      <select name="role" class="form-select" [(ngModel)]="register.role" required>
+        <option value="">Select Role</option>
+        <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+      </select>
+    </div>
+  
+    <button type="submit" class="btn btn-primary w-100" [disabled]="registerForm.invalid">
+      Register
+    </button>
+  </form>
+  
