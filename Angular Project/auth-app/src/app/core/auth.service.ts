@@ -9,7 +9,7 @@ import { Register } from '../models/register';
 })
 export class AuthService {
 
-  private baseUrl = 'http://localhost:8081/api/auth';
+  private baseUrl = 'http://localhost:8080/api/auth';
 
   private readonly tokenKey = 'access_token';
   private roleSubject = new BehaviorSubject<string | null>(null);
@@ -17,7 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   login(credentials: { email: string; password: string }) {
-    return this.http.post<any>('http://localhost:8081/api/auth/login', credentials);
+    return this.http.post<any>('http://localhost:8080/api/auth/login', credentials);
   }
 
   // signUp(
@@ -37,6 +37,7 @@ export class AuthService {
 
   getRole() {
     return this.roleSubject.asObservable();
+    
   }
 
   logout() {
