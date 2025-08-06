@@ -1,12 +1,17 @@
 import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-post-approval-details',
   imports: [ReactiveFormsModule, NgIf],
   templateUrl: './post-approval-details.component.html',
-  styleUrl: './post-approval-details.component.css'
+  styleUrl: './post-approval-details.component.css',
 })
 export class PostApprovalDetailsComponent implements OnInit {
   loanForm!: FormGroup;
@@ -63,6 +68,7 @@ export class PostApprovalDetailsComponent implements OnInit {
       unappliedIntAmount: [0],
 
       securityArrangement: [''],
+      customSecurityArrangement: [''],
       tpaStartDate: [null],
       tpaEndDate: [null],
       scheduleRegDate: [null],
@@ -72,11 +78,21 @@ export class PostApprovalDetailsComponent implements OnInit {
   }
 
   onSubmit(): void {
+    debugger
     if (this.loanForm.valid) {
-      console.log('Form Data:', this.loanForm.value);
+      const formValue = { ...this.loanForm.value }; 
+
+      if (formValue.securityArrangement === 'Other') {
+        formValue.securityArrangement = formValue.customSecurityArrangement;
+      }
+
+      delete formValue.customSecurityArrangement;
+
+      console.log('Form Data:', formValue);
       
     } else {
       console.log('Form Invalid!');
+      this.loanForm.markAllAsTouched(); 
     }
   }
 }
