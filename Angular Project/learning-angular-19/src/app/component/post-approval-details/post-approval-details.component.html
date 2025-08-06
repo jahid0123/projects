@@ -1,0 +1,458 @@
+<div class="bg-secondary-subtle container mt-5 mb-3">
+  <h3 class="p-2">Post Approval Details:</h3>
+</div>
+<div class="container">
+  <form [formGroup]="loanForm" (ngSubmit)="onSubmit()" class="row g-3">
+    <!-- Details -->
+    <!-- <div class="col-md-2">
+    <label class="form-label">Post Approval ID</label>
+    <input type="number" class="form-control" formControlName="postApprovalId">
+  </div> -->
+
+    <div class="row mb-3">
+        <h4 class="mb-2">Loan Approval Information</h4>
+
+        <div class="col-md-2">
+      <label class="form-label">Approved Loan Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="appLoanAmount"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Repayment Tenure</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="appRepaymentTenure"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Loan Moratorium</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="appLoanMoratorium"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Profit Rate</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="appProfitRate"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Processing Fees</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="appProcessingFees"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Early Settlement Fees</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="appEarlySettlementFees"
+      />
+    </div>
+    </div>
+
+    
+
+    <!-- Disbursement Details -->
+    <div class="row mb-3">
+        <h4 class="mb-2">Disbursement Information</h4>
+
+        <div class="col-md-2">
+      <label class="form-label">Loan Contract No</label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="loanContractNo"
+      />
+    </div>
+        <div class="col-md-2">
+      <label class="form-label">Disbursement Date</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="disbursementDate"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Disbursement Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="disbursementAmount"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Maturity Date</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="disMaturityDate"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Interest Rate</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="disInterestRate"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Loan Tenure</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="disLoanTenure"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Moratorium Period</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="moratoriumPeriod"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Moratorium Date</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="moratoriumDate"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">First Repayment Date</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="disFirstRepaymentDate"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">Monthly Installment Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="disMonthlyInstallAmount"
+      />
+    </div>
+
+    <!-- PP Disbursement -->
+    <div class="col-md-2">
+      <label class="form-label">PP Disbursement Date</label>
+      <input
+        type="date"
+        class="form-control"
+        formControlName="ppDisbursementDate"
+      />
+    </div>
+
+    <div class="col-md-2">
+      <label class="form-label">PP Disbursement Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        formControlName="ppDisbursementAmount"
+      />
+    </div>
+
+    </div>
+    <!-- Restructure -->
+    <div class="row mb-3">
+      <h4 class="accordion-header mb-2">Restructure Information</h4>
+      <div class="col-md-2">
+        <label class="form-label">Restructure Contract No</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="restructureContractNo"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Restructure Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="restructureDate"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Restructure Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="restructureAmount"
+        />
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Restructure Down Payment Received</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="restructureDPayReceived"
+        />
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Restructure Monthly Install Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="restructureMonthlyInstallAmount"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Restructure Maturity Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="restructureMaturityDate"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Restructure Interest Rate</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="restructureInterestRate"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Restructure Loan Tenure</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="restructureLoanTenure"
+        />
+      </div>
+    </div>
+
+    <!-- Reschedule -->
+    <div class="row mb-3">
+      <h4 class="accordion-header mb-2">Reschedule Information</h4>
+      <div class="col-md-2">
+        <label class="form-label">Reschedule Contract No</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="rescheduleContractNo"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Reschedule Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="rescheduleDate"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Reschedule Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="rescheduleAmount"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Reschedule Loan Tenure</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="rescheduleLoanTenure"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Reschedule Maturity Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="rescheduleMaturityDate"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Reschedule Interest Rate</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="rescheduleInterestRate"
+        />
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Reschedule Monthly Install Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="rescheduleMonthlyInstallAmount"
+        />
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Reschedule Down Payment Received</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="rescheduleDPayReceived"
+        />
+      </div>
+    </div>
+
+    <!-- Written Off -->
+    <div class="row mb-3">
+      <h4>Written Off Information</h4>
+      <div class="col-md-2">
+        <label class="form-label">Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="writtenOffDate"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="writtenOffAmount"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Principal Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="principalAmount"
+        />
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Interest Suspense Amount</label>
+        <input type="number" class="form-control" formControlName="susAmount" />
+      </div>
+
+      <div class="col-md-3">
+        <label class="form-label">Unapplied Interest Amount</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="unappliedIntAmount"
+        />
+      </div>
+    </div>
+
+    <!-- Miscellaneous -->
+    <div class="row mb-3">
+      <h4 class="accordion-header mb-2">Defferal Information</h4>
+      <div class="col-md-4">
+        <label class="form-label">Security Arrangement</label>
+        <select class="form-select" formControlName="securityArrangement">
+          <option value="">--Choose one--</option>
+          <option value="Register Mortgage">Register Mortgage</option>
+          <option value="Equitable Mortgage">Equitable Mortgage</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div
+        class="col-md-3"
+        *ngIf="loanForm.get('securityArrangement')?.value === 'Other'"
+      >
+        <label class="form-label">Other</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="customSecurityArrangement"
+          placeholder="Enter other arrangement"
+        />
+      </div>
+    </div>
+
+    <!-- Show this input only when 'Other' is selected -->
+
+    <div class="row">
+      <div class="col-md-2">
+        <label class="form-label">TPA Start Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="tpaStartDate"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">TPA End Date</label>
+        <input type="date" class="form-control" formControlName="tpaEndDate" />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Schedule Registration Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="scheduleRegDate"
+        />
+      </div>
+
+      <div class="col-md-2">
+        <label class="form-label">Schedule Rigpa Date</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="scheduleRigpaDate"
+        />
+      </div>
+
+      <div class="col-md-4">
+        <label class="form-label">Remarks</label>
+        <textarea
+          class="form-control"
+          formControlName="remarks"
+          rows="1"
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="col-12 text-center mb-3">
+      <button type="submit" class="btn btn-success px-5">Submit</button>
+    </div>
+  </form>
+</div>
