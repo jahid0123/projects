@@ -1,0 +1,30 @@
+<h2>Loan Application</h2>
+<form [formGroup]="loanForm" (ngSubmit)="saveLoan()">
+
+  <h3>Applicant</h3>
+  <app-person [personForm]="applicantPerson()"></app-person>
+  <app-address [addressForm]="loanForm.get('applicant.address')"></app-address>
+
+  <h3>Spouse</h3>
+  <app-person [personForm]="loanForm.get('spouse.person')"></app-person>
+  <app-address [addressForm]="loanForm.get('spouse.address')"></app-address>
+
+  <h3>Guarantors</h3>
+  <div formArrayName="guarantors">
+    <div *ngFor="let g of guarantors.controls; let i=index" [formGroupName]="i">
+      <app-person [personForm]="g.get('person')"></app-person>
+      <app-address [addressForm]="g.get('address')"></app-address>
+      <button type="button" (click)="removeGuarantor(i)">Remove</button>
+    </div>
+  </div>
+  <button type="button" (click)="addGuarantor()">Add Guarantor</button>
+
+  <h3>Employment Details</h3>
+  <div formGroupName="employmentDetails">
+    <input formControlName="companyName" placeholder="Company Name" />
+    <input formControlName="designation" placeholder="Designation" />
+    <input formControlName="salary" type="number" placeholder="Salary" />
+  </div>
+
+  <button type="submit">Save Loan</button>
+</form>

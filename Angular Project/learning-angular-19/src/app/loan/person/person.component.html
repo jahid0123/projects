@@ -1,0 +1,88 @@
+<div class="card">
+  <form [formGroup]="person">
+    <div class="row form-group mb-2">
+      <div class="col-md-4">
+        <div class="form-label">First Name:</div>
+        <input
+          type="text"
+          formControlName="firstName"
+          class="form-control"
+          placeholder="Enter first name"
+        />
+      </div>
+      <div class="col-md-4">
+        <div class="form-label">Last Name:</div>
+        <input
+          type="text"
+          formControlName="lastName"
+          class="form-control"
+          placeholder="Enter last name"
+        />
+      </div>
+      <div class="col-md-4">
+        <div class="form-label">Date of Birth:</div>
+        <input type="date" formControlName="dob" class="form-control" />
+      </div>
+    </div>
+    <div class="row form-group mb-2">
+      <div class="col-md-4">
+        <div class="form-label">Father Name:</div>
+        <input
+          type="text"
+          formControlName="fatherName"
+          class="form-control"
+          placeholder="Enter father name"
+        />
+      </div>
+      <div class="col-md-4">
+        <div class="form-label">Mother Name:</div>
+        <input
+          type="text"
+          formControlName="motherName"
+          class="form-control"
+          placeholder="Enter mother name"
+        />
+      </div>
+      <div class="col-md-4">
+        <div class="form-label">Phone Number:</div>
+        <input
+          type="text"
+          formControlName="phoneNumber"
+          class="form-control"
+          placeholder="Enter phone Number"
+        />
+      </div>
+    </div>
+    <div class="row form-group mb-2">
+      <div class="col-md-4">
+        <div class="form-label">Email:</div>
+        <input
+          type="email"
+          formControlName="email"
+          class="form-control"
+          placeholder="Enter father name"
+        />
+      </div>
+      <div class="col-md-4">
+        <div class="form-label">Gender:</div>
+        <select name="gender" id="gender" formControlName="gender">
+          <Option value="">--Select One--</Option>
+          <Option value="Male">Male</Option>
+          <Option value="Female">Female</Option>
+          <Option value="Other">Other</Option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <div class="form-label">Maritial Status:</div>
+        <!-- <input type="text" formControlName="maritialStatus" class="form-control" placeholder="Enter phone Number"/> -->
+        <select name="gender" id="gender" formControlName="maritialStatus">
+          <Option value="">--Select One--</Option>
+          <Option value="Single">Single</Option>
+          <Option value="Married">Married</Option>
+          <Option value="Devorced">Devorced</Option>
+          <Option value="Widowed">Widowed</Option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
